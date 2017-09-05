@@ -1,0 +1,112 @@
+<!-- This is my website. -->
+
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>It's Armin!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- design imports -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="Flat-UI-2.3.0/dist/css/flat-ui.css" rel="stylesheet">
+
+        <style>
+            .navbar-default .navbar-header > a,
+            .navbar-default .navbar-nav > li > a,
+            .navbar-default .navbar-nav > li > a {
+                color: #7F8C8D;
+            }
+
+            .navbar-default .navbar-header > a:hover,
+            .navbar-default .navbar-nav > li > a:hover,
+            .navbar-default .navbar-nav > li > a:focus {
+                color: #34495E;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default" style="height: 80px">
+            <div class="container-fluid">
+
+                <!-- navbar components are 53px high... (basis of padding) -->
+                <div class="navbar-header">
+                    <a href="home.html" class="navbar-brand" style="padding-top: 7px; font-size: 70px">Armin</a>
+                </div>
+                <ul class="nav navbar-nav pull-right" style="padding-top: 37px; font-size: 20px">
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">Misc.</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    <div class="container" style="text-align: center">
+
+        <h1 style="color: #3498DB; font-size: 1000%">Hello!</h1>
+        <p>
+            Thanks for stopping by at my website. Hope you enjoy your stay.
+        </p>
+
+        <div style="padding-top: 20%">
+            <nav class="navbar navbar-fixed-bottom">
+                <center>
+                    <blockquote data-toggle="tooltip" data-placement="top" title="Refresh For a New Quote!" style="width:auto; display:table; text-align: left">
+                        <p id="text"></p>
+                        <small id="name"></small>
+                    </blockquote>
+                </center>
+            </nav>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+
+                // quotes and authors
+                var quotes = [{
+                    "text": "Think where man's glory most begins and ends and say my glory was I had such friends.",
+                    "name": "William Butler Yeats"
+                },{
+                    "text": "Stay Hungry. Stay Foolish.",
+                    "name": "Steve Jobs"
+                },{
+                    "text": "To win big, sometimes you have to take big risks.",
+                    "name": "Bill Gates"
+                },{
+                    "text": "We know what we are, but know not what we may be.",
+                    "name": "William Shakespeare (Hamlet)"
+                },{
+                    "text": "An investment in knowledge always pays the best interest.",
+                    "name": "Benjamin Franklin"
+                },{
+                    "text": "The value of life is not based on how long we live, but how much we contribute to others in our society.",
+                    "name": "Buddha"
+                },{
+                    "text": "You can have all the money in the world, but there's one thing you will never have... a dinosaur.",
+                    "name": "Homer Simpson"
+                },{
+                    "text": "I believe it was Benjamin Franklin who said: 'You have reached the end of your <br/> free trial membership at BenjaminFranklinQuotes.com.' ",
+                    "name": "Mr. Peanutbutter"
+                },{
+                    "text": "If you’re walking down the right path and you’re willing to keep walking, eventually you’ll make progress.",
+                    "name": "Barack Obama"
+                }];
+
+                // randomly show one quote
+                var q = Math.floor((Math.random() * (quotes.length - 1)) + 1);
+                document.getElementById("text").innerHTML = quotes[q].text;
+                document.getElementById("name").innerHTML = quotes[q].name;
+            });
+
+            $('[data-toggle="tooltip"]').tooltip();
+        </script>
+
+    </div>
+
+    </body>
+</html>
